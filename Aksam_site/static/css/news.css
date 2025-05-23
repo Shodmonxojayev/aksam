@@ -1,0 +1,145 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.news-banner {
+    width: 100%;
+    height: 50vh;
+    display: block;
+    background-image: url('../images/bg-img-2.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.news-banner::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 67vh;
+    background: rgba(0, 0, 0, 0.2); /* 20% qorong‘ulashtirish */
+}
+
+.views{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.social-media-shares p{
+    font-weight: bolder;
+}
+
+.news-content {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.news-title {
+    font-size: 2em;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.news-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9em;
+    color: gray;
+}
+
+.share-buttons button, .print-pdf {
+    margin: 10px 5px;
+    padding: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.share-buttons button:hover, .print-pdf:hover {
+    background: #0056b3;
+}
+
+.related-news {
+    margin-top: 40px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+.related-news h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.news-list {
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+    /* flex-direction: column;
+    gap: 15px; */
+}
+
+.news-item {
+    background: white;
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.news-item h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.news-item h3 a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.news-item p {
+    font-size: 14px;
+    color: #555;
+    margin: 8px 0;
+}
+
+.read-more {
+    display: inline-block;
+    font-size: 14px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+
+@media (max-width: 768px) {
+    .news-content, .related-news {
+        padding: 10px;
+    }
+}
+@media (max-width: 430px){
+    .news-list{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+

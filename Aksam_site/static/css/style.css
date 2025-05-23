@@ -1,0 +1,1138 @@
+@font-face {
+    font-family: 'RichardClean';
+    src: url('../fonts/richard-clean-font/RichardCleanPersonalUseRegular-MV54p.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+
+:root{
+  --blue-color: #00b4d8;
+  --avg-blue-color: #0077b6;
+  --darl-blue-color: #03045e;
+  --blue-white-combination: #90e0ef;
+  --white-and-blue: #caf0f8;
+  --dark-red: rgb(212, 9, 9);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+/* Navbar bo'limini boshlanishi #########################################################################################33 */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 60px;
+    background-color: white;
+    color: black;
+    position: relative;
+    box-shadow: 0px 5px 30px black !important;
+    z-index: 100;
+  }
+
+  .logo h3{
+    font-size: 28px;
+    color: red;
+    user-select: none;
+  }
+
+  .navbar ul {
+    display: flex;
+    list-style-type: none;
+    gap: 40px;
+    padding: 0;
+    margin: 0;
+  }
+  .navbar ul li{
+    display: flex;
+    align-items: center;
+  }
+  
+  
+  .navbar ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    transition: transform 0.3s ease, color 0.3s ease;
+    display: inline-block; 
+    position: relative; 
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .navbar ul li a:not(.account-link)::after {
+    content: ""; 
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background-color: black;
+    transition: width 0.3s ease;
+  }
+
+  .navbar ul li a:hover::after {
+    width: 100%; 
+  }
+
+  .acc-cart{
+    display: flex;
+    gap: 25px;
+  }
+  .account-ico-style{
+    font-size: 28px;
+  }
+  /* .account{
+    width: 100px;
+    height: 100px;
+  }
+   */
+  /* Burger menyu */
+  .burger-menu {
+    display: none;
+    cursor: pointer;
+  }
+  #burger-menu-btn {
+    font-size: 30px; 
+    background: none; 
+    border: none; 
+    cursor: pointer; 
+    color: black;
+  }
+  
+  .account-burger-menu{
+    display: flex;
+    gap: 20px !important;
+  }
+  .burger-menu .bar {
+    width: 25px;
+    height: 3px;
+    margin: 5px;
+    background-color: black;
+    border-radius: 5px;
+  }
+  .menu{
+    display: none;
+  }
+  .account-ico{
+    width: 36px;
+    height: 36px;
+    margin-right: 10px;
+    fill: black;
+  }
+/* Navbar bo'limini medi qismini boshlanishi ######################################################################### */
+  /* Mobil va kichik ekranlar uchun burger menyu */
+  @media (max-width: 768px) {
+    .navbar {
+      display: none;
+    }
+    
+    .logo{
+      margin-left: -2.5rem;
+    }
+    .burger-menu-btn{
+      margin-right: -2.5rem;
+    }
+    
+    .burger-menu {
+      display: block;
+    }
+  
+    .menu {
+      display: none;
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 250px;
+      background-color: black;
+      padding-top: 50px;
+      box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+      z-index: 100;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+  
+    .menu ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+  
+    .menu ul li {
+      padding: 15px;
+      border-bottom: 1px solid white;
+    }
+  
+    .menu ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+  
+    .menu .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: white;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    .account-ico{
+      width: 36px;
+      height: 36px;
+      margin-right: 10px;
+      fill: white;
+    }
+    .account-link{
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+  }
+
+
+/* Navbar bo'limini tugashi ############################################################################################ */
+
+
+/* Home bo'limini boshlanishi ############################################################################################# */
+
+.home-bg-img{
+  position: relative;
+  background-image: url(../images/bg-img-1.jpg);
+  width: 100%;
+  height: 83vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.home-bg-img::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 50%;
+  z-index: 1;
+}
+.hero{
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  width: 85%;
+}
+.hero h3, .hero p{
+  color: white;
+}
+.hero h3{
+  font-size: 36px;
+}
+.hero p{
+  font-size: 18px;
+}
+.home-btns{
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 50px;
+}
+.home-btns a{
+  text-decoration: none;
+}
+.home-btns a button{
+  border: none;
+  cursor: pointer;
+}
+.home-btns a .contact-btn{
+  color: white;
+  background-color: red;
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 5px;
+  transition: background-color 0.4s ease;
+}
+.home-btns a .contact-btn:hover{
+  color: white;
+  background-color: rgb(212, 9, 9);
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 5px;
+}
+.home-btns a .about-btn{
+  color: black;
+  background-color: white;
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 5px;
+  transition: background-color 0.4s ease;
+}
+.home-btns a .about-btn:hover{
+  color: white;
+  background-color: red;
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 5px;
+}
+
+
+/* Home page Media bo'limini boshlanishi */
+@media (max-width: 768px){
+  .hero h3{
+    font-size: 28px;
+  }
+  .hero p{
+    font-size: 16px;
+  }
+}
+@media (max-width: 430px){
+  .hero h3{
+    font-size: 22px;
+  }
+  .hero p{
+    font-size: 16,5px;
+  }
+  .home-btns{
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media (max-width: 375px){
+  .hero h3{
+    font-size: 22px;
+  }
+  .hero p{
+    font-size: 16,5px;
+  }
+  .home-btns{
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Home bo'limini tugashi ################################################################################################# */
+
+
+/* Zakaz haqida info bo'limini boshlanishi ##########################################################################*/
+
+.information-order{
+  display: flex;
+  justify-content: center;
+  gap: 200px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.minimum-order{
+  height: 130px;
+  border-left: 3px solid red;
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  padding-left: 20px;
+  
+}
+.minimum-order img{
+  width: 40px;
+  height: 40px;
+}
+.minimum-order p{
+  margin-bottom: 20px !important;
+}
+.minimum-order h4{
+  margin-top: 0px;
+}
+
+/* Media bo'limini boshlanishi ################################################################# */
+
+@media (max-width: 768px){
+  .section-min-order{
+    display: flex;
+    justify-content: center;
+  }
+  .information-order{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+}
+@media (max-width: 425px){
+  .section-min-order{
+    padding: 20px;
+  }
+}
+@media (max-width: 375px){
+  .minimum-order{
+    height: 150px;
+  }
+}
+
+/* Zakaz haqida info bolimini tugashi ############################################################################## */
+
+/* Jadval qismini boshlanishi ######################################################################################### */
+
+.section-table{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.container-table {
+  width: 60%;
+}
+.table-header {
+  background: red;
+  color: white;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  align-items: center;
+}
+.table-header i {
+  margin-right: 10px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+th {
+  background: #f2f2f2;
+}
+.table-link-a{
+  text-decoration: none;
+  color: black;
+}
+.product-calc-btn{
+  margin-bottom: 30px;
+}
+
+/* Jadval qismini tugashi ############################################################################################# */
+
+/* About us bo'limini boshlanishi ################################################################################### */
+
+.about-us{
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+.about-us .about-us-title h1{
+  position: relative;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+.about-us .about-us-title h1::after {
+  content: "";
+  position: absolute; 
+  bottom: -15px;
+  left: 50%; 
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: red; 
+}
+.main-about-us{
+  margin-top: 50px;
+}
+.img-about{
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  padding: 0 150px 0 150px ;
+}
+.main-about-us .img-about .img-aksam img{
+  width: 500px;
+  height: 300px;
+  border: 15px solid white;
+  box-shadow: 1px 1px 7px 1px #333;
+}
+.main-about-us .img-about .span-txt p{
+  font-size: 18px;
+}
+.main-about-us .img-about .span-txt p span a{
+  color: red;
+}
+.main-about-us .img-about .span-txt p span a:hover{
+  text-decoration: none;
+}
+.history-aksam{
+  padding: 25px 150px 0 150px;
+}
+.history-aksam p{
+  font-size: 18px;
+}
+.history-aksam .about-us-btn{
+  border: none;
+  background-color: red;
+  padding: 10px 25px 10px 25px;
+  cursor: pointer;
+  /* transition: width 0.33s ease; */
+  transition: transform 0.4s ease-in-out;
+}
+.history-aksam .about-us-btn:hover{
+  background-color: rgb(212, 9, 9);  
+}
+.history-aksam .about-us-btn a{
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+}
+
+/* Media bo'limini boshlanishi ###################################################################################### */
+
+@media (max-width: 1024px){
+  .img-about{
+    padding: 25px 50px 0 50px;
+    align-items: center;
+  }
+  .main-about-us .img-about .img-aksam img{
+    width: 400px;
+    height: 280px;
+    border: 15px solid white;
+    box-shadow: 1px 1px 7px 1px #333;
+    /* margin-top: -50px; */
+  }
+  .main-about-us .img-about .span-txt h2{
+    font-size: 18px;
+  }
+  .main-about-us .img-about .span-txt p{
+    font-size: 16px;
+  }
+  .history-aksam{
+    padding: 25px 50px 0 50px;
+  }
+  .history-aksam h2{
+    font-size: 18px;
+  }
+  .history-aksam p{
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px){
+  .img-about{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 25px 25px 0 25px;
+  }
+  .main-about-us .img-about .img-aksam img{
+    width: 500px;
+    height: 300px;
+  }
+  .history-aksam{
+    text-align: center;
+  }
+  .history-aksam{
+    padding: 25px 25px 0 25px;
+  }
+  .history-aksam h2{
+    font-size: 18px;
+  }
+  .history-aksam p{
+    font-size: 16px;
+  }
+}
+@media (max-width: 430px){
+  .about-us-title{
+    margin-top: -80px;
+  }
+  .img-about{
+    padding: 10px 10px 10px 10px;
+    margin-top: -50px;
+  }
+  .main-about-us .img-about .img-aksam img{
+    display: none;
+  }
+  .main-about-us .img-about .span-txt h2{
+    font-size: 18px;
+  }
+  .main-about-us .img-about .span-txt p{
+    font-size: 16px;
+  }
+  .history-aksam{
+    padding: 10px 10px 10px 10px;
+  }
+}
+@media (max-width: 375px){
+  .about-us-title{
+    margin-top: -80px;
+  }
+  .img-about{
+    padding: 10px 10px 10px 10px;
+    margin-top: -50px;
+  }
+  .main-about-us .img-about .img-aksam img{
+    display: none;
+  }
+  .main-about-us .img-about .span-txt h2{
+    font-size: 18px;
+  }
+  .main-about-us .img-about .span-txt p{
+    font-size: 16px;
+  }
+  .history-aksam{
+    padding: 10px 10px 10px 10px;
+  }
+  .about-us-title{
+    margin-top: -80px;
+  }
+  .minimum-order{
+    height: 150px;
+  }
+}
+
+/* Media bo'limini tugashu ########################################################################################### */
+
+
+/* About us bo'limini tugashi ######################################################################################### */
+
+/* Product bo'limini boshlanishi ###################################################################################### */
+
+.product-section .product-title h1{
+  position: relative;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+.product-section .product-title h1::after {
+  content: "";
+  position: absolute; 
+  bottom: -15px;
+  left: 50%; 
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: red; 
+}
+
+
+/* .carousel-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  will-change: transform;
+}
+
+.carousel-item {
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 25%; 
+  text-align: center;
+  margin: 0 10px; 
+  box-sizing: border-box;
+}
+
+.carousel-item img {
+  width: 300px;
+  height: 300px;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 10;
+}
+
+
+.left-btn {
+  left: 20px;
+}
+
+.right-btn {
+  right: 10px;
+}
+
+@media (max-width: 1024px) {
+  .carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 980px;
+    margin: auto;
+  }
+  .carousel-item {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 50%;
+    text-align: center;
+    margin: 0 10px;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-item {
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-item {
+    max-width: 100%; 
+  }
+} */
+
+
+/* Product bo'limining Galery qismini boshlanishi ##################################################################### */
+
+.gallery-section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; 
+  gap: 10px;
+  padding: 20px;
+  max-width: 1200px;
+  width: 100%;
+}
+.gallery img {
+  width: calc(20% - 10px);
+  height: auto;
+  border-radius: 8px;
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); */
+  /* box-shadow: 3px -8px 10px rgba(0, 0, 0, 0.08), 
+            -3px -8px 10px rgba(0, 0, 0, 0.08), 
+             0px 8px 16px rgba(0, 0, 0, 0.16); */
+box-shadow: 1px 2px 8px gray;
+cursor: pointer;
+transition: transform 0.4s ease-in-out;
+}
+.gallery img:hover{
+  transform: scale(1.07);
+}
+
+.gallery-button{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.gallery-button .gallery-btn{
+  border: none;
+  background-color: red;
+  padding: 10px 25px 10px 25px;
+  cursor: pointer;
+  /* transition: width 0.33s ease; */
+  transition: transform 0.4s ease-in-out;
+}
+.gallery-button .gallery-btn:hover{
+  background-color: rgb(212, 9, 9);  
+}
+.gallery-button .gallery-btn a{
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+}
+
+/* Medi bo'limini boshlanishi %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+@media (max-width: 1024px) {
+  .gallery img {
+      width: calc(25% - 10px);
+  }
+  .hidden-img-9{
+    display: none;
+  }
+  .hidden-img-10{
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .gallery img {
+      width: calc(33.33% - 10px);
+  }
+  .hidden-img-9{
+    display: block;
+  }
+  .hidden-img-10{
+    display: none;
+  }
+}
+@media (max-width: 480px) {
+  .gallery img {
+      width: calc(25% - 10px);
+  }
+  .hidden-img-9{
+    display: none;
+  }
+  .hidden-img-10{
+    display: none;
+  }
+}
+@media (max-width: 320px) {
+  .gallery img {
+      width: 30%;
+  }
+  .hidden-img-9{
+    display: block;
+  }
+  .hidden-img-10{
+    display: none;
+  }
+}
+
+/* Product bo'limining Galery qismini tugashi ######################################################################### */
+
+
+/* Product bo'limini tugashi ########################################################################################## */
+
+/* News bo'limini boshlanishi ############################################################################################ */
+
+.news-section .news-title h1{
+  position: relative;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 50px;
+}
+.news-section .news-title h1::after {
+  content: "";
+  position: absolute; 
+  bottom: -15px;
+  left: 50%; 
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: red; 
+}
+.news-box{
+  display: flex;
+  justify-content: center !important;
+  width: 100%;
+}
+.news-container{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  
+}
+.news-space{
+  width: calc(22% - 20px);
+  background-color: white;
+  box-shadow: 1px 1px 8px rgba(128, 128, 128, 0.56);
+  padding: 10px;
+}
+.news-space .news-img{
+  width: 100%;
+}
+.news-btn{
+  border: none;
+  background-color: red;
+  padding: 10px 25px 10px 25px;
+  cursor: pointer;
+  /* transition: width 0.33s ease; */
+  transition: transform 0.4s ease-in-out;
+}
+.news-btn:hover{
+  background-color: rgb(212, 9, 9);  
+}
+.news-btn a{
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+}
+.data{
+  color: gray;
+}
+
+/* Media bo'limini boshlanishi %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+@media (max-width: 1024px) {
+  .news-space {
+    width: calc(30% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .news-container {
+    justify-content: space-around; 
+  }
+  .news-space {
+    width: calc(45% - 20px); 
+  }
+}
+
+@media (max-width: 480px) {
+  .news-space {
+    width: 100%; 
+  }
+}
+
+
+/* News bo'limini tugashi ################################################################################################ */
+
+
+/* Kontaktlar bo'limini boshlanishi######################################################################################### */
+
+.contacts-section .contacts-title h1{
+  position: relative;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 50px;
+}
+.contacts-section .contacts-title h1::after {
+  content: "";
+  position: absolute; 
+  bottom: -15px;
+  left: 50%; 
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: red; 
+}
+
+.contacts-container {
+  display: flex;
+  justify-content: space-around;
+  /* flex-wrap: wrap; */
+  padding: 20px;
+}
+.icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  fill: black;
+  margin-top: 15px;
+}
+.social-contacts {
+  display: flex;
+  gap: 10px;
+}
+.social-contacts a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mediaicon-contacts{
+  width: 36px;
+  height: 36px;
+  margin-right: 10px;
+  fill: black;
+  transition: fill 0.3s ease, background-color 0.3s ease;
+}
+.telegram-contacts{
+  width: 42px !important;
+  height: 42px !important;
+  margin-right: 10px;
+  fill: black;
+  border-radius: 40%;
+}
+.mediaicon-contacts:hover {
+  fill: rgb(212, 9, 9);
+}
+
+/* 
+.contacts, .zayavka {
+  flex: 1;
+  padding: 20px;
+} */
+/* .contacts {
+  border-right: 1px solid #ddd;
+} */
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  /* margin-bottom: 15px; */
+}
+.contact-item svg {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+#zayavka-form{
+  display: flex;
+  flex-direction: column;
+}
+form input, form textarea, form button {
+  width: 400px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+form input:focus, form textarea:focus {
+  border-color: red;
+  outline: none;
+}
+#zayavka-form textarea{
+  height: 60px;
+}
+button {
+  background-color: red;
+  color: white;
+  cursor: pointer;
+}
+button:hover {
+  background-color: rgb(212, 9, 9);
+}
+@media (max-width: 768px) {
+  .contacts-container {
+      flex-direction: column;
+      align-items: center;
+  }
+  .zayavka{
+    margin-top: 30px;
+  }
+}
+@media (max-width: 480px){
+  form input, form textarea, form button {
+    width: 300px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+}
+@media (max-width: 320px){
+  form input, form textarea, form button {
+    width: 260px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+}
+
+/* Kontaktlar bo'limini tugashi ########################################################################################### */
+
+
+
+
+
+/* Footer bo'limini boshlanishi ############################################################################################ */
+
+footer {
+  background-color: #222;
+  color: white;
+  padding: 10px 0;
+  /* text-align: center; */
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  margin: auto;
+  padding: 20px;
+}
+
+.footer-box{
+  display: flex;
+  gap: 80px;
+}
+
+
+.logo-footer {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.ul-footer {
+  list-style: none;
+  padding: 0;
+}
+
+.ul-footer li {
+  margin: 8px 0;
+}
+
+.ul-footer li a {
+  color: white;
+  text-decoration: none;
+}
+
+.location, .working-hours {
+  text-align: left;
+}
+
+.social-contacts-footer {
+  display: flex;
+  gap: 10px;
+}
+.social-contacts-footer a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mediaicon-contacts-footer{
+  width: 36px;
+  height: 36px;
+  margin-right: 10px;
+  fill: white;
+  transition: fill 0.3s ease, background-color 0.3s ease;
+}
+.telegram-contacts-footer{
+  width: 42px !important;
+  height: 42px !important;
+  margin-right: 10px;
+  fill: white;
+  border-radius: 40%;
+}
+.mediaicon-contacts-footer:hover {
+  fill: rgb(212, 9, 9);
+}
+
+@media (max-width: 1024px) {
+  .footer-box{
+    gap: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .footer-container{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .footer-box{
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+}
+
+
+/* Footer bo'limini tugashi ############################################################################################## */

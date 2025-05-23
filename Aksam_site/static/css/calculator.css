@@ -1,0 +1,275 @@
+/* Asosiy o'zgaruvchilar */
+:root {
+    --primary: #4e73df;
+    --primary-dark: #2e59d9;
+    --secondary: #f8f9fc;
+    --success: #1cc88a;
+    --danger: #e74a3b;
+    --warning: #f6c23e;
+    --text: #333;
+    --text-light: #6c757d;
+    --border: #e3e6f0;
+    --shadow: 0 0.15rem 1.75rem rgba(58, 59, 69, 0.1);
+}
+
+/* Umumiy stil */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: var(--text);
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Grid tizimi */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+.col-12 {
+    width: 100%;
+    padding: 0 15px;
+}
+
+.col-md-6, .col-lg-4, .col-lg-8, .col-lg-4 {
+    padding: 0 15px;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .col-md-6 {
+        width: 50%;
+    }
+}
+
+@media (min-width: 992px) {
+    .col-lg-4 {
+        width: 33.333%;
+    }
+    .col-lg-8 {
+        width: 66.666%;
+    }
+}
+
+/* Sarlavha */
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    color: var(--primary);
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.header p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+/* Kartalar */
+.card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.card-header {
+    background-color: var(--primary);
+    color: white;
+    padding: 15px 20px;
+    font-weight: 600;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+/* Mahsulotlar */
+.product-item {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.product-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.product-price {
+    color: var(--text-light);
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Input va tugmalar */
+.input-group {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.form-control {
+    flex: 1;
+    padding: 10px 15px;
+    border: 1px solid var(--border);
+    border-radius: 4px 0 0 4px;
+    font-size: 1rem;
+}
+
+.btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+}
+
+.btn-success {
+    background-color: var(--success);
+    color: white;
+}
+
+.btn-danger {
+    background-color: var(--danger);
+    color: white;
+}
+
+.btn-warning {
+    background-color: var(--warning);
+    color: white;
+}
+
+.btn-sm {
+    padding: 5px 10px;
+    font-size: 0.9rem;
+}
+
+.btn-lg {
+    padding: 12px 20px;
+    font-size: 1.1rem;
+}
+.btn-gap{
+    display: flex;
+    gap: 5px;
+}
+.a-link{
+    text-decoration: none;
+}
+
+/* Jadval */
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th, .table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+.table th {
+    background-color: var(--secondary);
+    font-weight: 600;
+}
+
+.table tr:last-child td {
+    border-bottom: none;
+}
+
+.table-active {
+    background-color: rgba(0, 0, 0, 0.05);
+    font-weight: bold;
+}
+
+/* Umumiy hisob */
+.total-box {
+    background-color: var(--secondary);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+/* Responsive moslashuvlar */
+@media (max-width: 768px) {
+    .input-group {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+        margin-top: 10px;
+        border-radius: 4px;
+    }
+    
+    .form-control {
+        border-radius: 4px;
+        margin-bottom: 10px;
+    }
+}
+
+/* Animatsiya */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.4s ease-out;
+}
+
+.button-to-cart{
+    display: flex;
+    gap: 100px;
+}
