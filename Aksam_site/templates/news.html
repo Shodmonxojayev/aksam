@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aksam Textile</title>
+    <link rel="stylesheet" href="{% static './css/news.css' %}">
+    <link rel="stylesheet" href="{% static './css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+ <!-- navbar bo'limini boshlanishi ###################################################################### -->
+<header>
+  <div class="logo">
+    <h3>aksam</h3>
+  </div>
+  <nav class="navbar">
+    <ul>
+      <li><a href="/">Главная</a></li>
+      <li><a href="/about_us/">О нас</a></li>
+      <li><a href="/products/">Продукция</a></li>
+      <li><a href="/news/">Новости</a></li>
+      <li><a href="/#contacts">Контакты</a></li>
+      <li class="acc-cart">
+        <div class="account">
+          <a href="/profile/" class="account-link">
+            <i class="fas fa-user-circle account-ico-style"></i>
+          </a>
+        </div>
+        <div class="account">
+          <a href="/cart/" class="account-link">
+            <i class="fas fa-shopping-cart account-ico-style"></i>
+          </a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+  <div class="burger-menu" onclick="toggleMenu()">
+      <button class="burger-menu-btn" id="burger-menu-btn">&#9776;</button>
+  </div>
+</header>
+
+<div class="menu">
+  <ul>
+      <li><a href="/">Главная</a></li>
+      <li><a href="/about_us/">О нас</a></li>
+      <li><a href="/products/">Продукция</a></li>
+      <li><a href="/#news">Новости</a></li>
+      <li><a href="/#contacts">Контакты</a></li>
+      <li>
+        <div class="account">
+          <a href="/profile/" class="account-link account-burger-menu">
+            <i class="fas fa-user-circle account-ico-style account-ico-style-burger-menu"></i>
+            <p>Аккаунт</p></a>
+        </div>
+        <div class="account">
+          <a href="/cart/" class="account-link account-burger-menu">
+            <i class="fas fa-shopping-cart account-ico-style "></i>
+            <p>Корзина</p>
+          </a>
+        </div>
+      </li>
+  </ul>
+  <div class="close-btn" onclick="toggleMenu()">X</div>
+</div>
+<!-- Navbar bo'limini tugashi ############################################################################### -->
+    
+    <div class="news-banner">
+        <!-- <img src="./images/bg-img-3.jpg" alt="Yangilik banneri"> -->
+    </div>
+    
+    <main class="news-content">
+        <h1 class="news-title">Aksam Textile kompaniyasi yangi innovatsion matolar ishlab chiqarishni boshladi.</h1>
+        <div class="news-meta">
+            <span class="views">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+                1234
+            </span>
+            <span class="date">15 Mart, 2025 - 14:30</span>
+        </div>
+        <article class="news-text">
+            <p>
+                Aksam Textile sifatli va ekologik toza matolar ishlab chiqarish bo‘yicha yangi texnologiyalarni joriy qilmoqda. Kompaniya mutaxassislari tabiiy tolalardan tayyorlangan mahsulotlar ustida ish olib bormoqda. <br><br>
+
+                Yangi mahsulotlar mijozlarning talab va ehtiyojlariga mos ravishda ishlab chiqilgan bo‘lib, nafaqat qulaylik, balki zamonaviy dizayni bilan ham ajralib turadi. Aksam Textile kelajakda mahalliy va xalqaro bozorda o‘z mavqeini mustahkamlashga intilmoqda.<br><br>
+
+                Tadqiqot va innovatsiyalar asosida ishlab chiqilgan yangi materiallar kiyim-kechak hamda interyer dizaynida qo‘llash uchun ideal hisoblanadi. Yaqin kunlarda kompaniyaning rasmiy veb-saytida batafsil ma’lumot va yangi kolleksiya taqdimoti bo‘lib o‘tadi.<br><br>
+
+                Bundan tashqari, kompaniya ekologik muhitga ijobiy ta’sir ko‘rsatish maqsadida qayta ishlangan materiallardan foydalanishni kengaytirishni rejalashtirmoqda. Mahsulotlar xalqaro sifat standartlariga mos kelishi uchun tajribali mutaxassislar tomonidan sinovdan o‘tkaziladi.<br><br>
+
+                Aksam Textile jamoasi mijozlar uchun eng yaxshi sharoitlarni yaratishga intilib, yangi dizayn va texnologiyalar asosida mahsulotlarni takomillashtirishda davom etadi.  <br><br>
+
+            </p>
+        </article>
+        
+
+        <div class="social-media-shares">
+            <p>Ijtimoiy tarmoqlar orqali ulashish.</p>
+            <div class="share-buttons">
+                <button class="share">Facebook</button>
+                <button class="share">Twitter</button>
+                <button class="share">Telegram</button>
+            </div>
+        </div>
+        
+        <button class="print-pdf">PDF Chop etish</button>
+    </main>
+    
+    <section class="related-news">
+        <h2>Boshqa yangiliklar</h2>
+        <div class="news-list">
+            <article class="news-item">
+                <h3><a href="#">Yangi innovatsion matolar ishlab chiqarildi</a></h3>
+                <p>Aksam Textile tomonidan ekologik toza va zamonaviy matolar ishlab chiqarildi...</p>
+                <a href="#" class="read-more">Batafsil →</a>
+            </article>
+            <article class="news-item">
+                <h3><a href="#">Mahsulot sifati oshirish loyihasi</a></h3>
+                <p>Kompaniya ishlab chiqarish jarayonlarini takomillashtirish uchun yangi texnologiyalar joriy qildi...</p>
+                <a href="#" class="read-more">Batafsil →</a>
+            </article>
+            <article class="news-item">
+                <h3><a href="#">Aksam Textile xalqaro bozorda</a></h3>
+                <p>Kompaniya o‘z mahsulotlarini xalqaro miqyosda eksport qilishni rejalashtirmoqda...</p>
+                <a href="#" class="read-more">Batafsil →</a>
+            </article>
+        </div>
+    </section>
+    
+<!-- Footer bo'limini boshlanishi ############################################################################################# -->
+
+<footer>
+  <div class="footer-container">
+      <!-- Logo va qisqacha tavsif -->
+
+        <div class="footer-box">
+          <div class="footer-section">
+            <h2 class="logo-footer">aksam</h2>
+            <p>"Нам Аксам Текстиль" ограниченная ответственность компания.</p>
+          </div>
+  
+          <!-- Navigatsiya havolalari -->
+          <div class="footer-section tezkor-havola">
+            <h3>Быстрые ссылки</h3>
+            <ul class="ul-footer">
+                <li><a href="/">Главная страница</a></li>
+                <li><a href="/products/">Продукты</a></li>
+                <li><a href="/calculator/">Система расчета продукции</a></li>
+                <li><a href="/#contacts">Контакты</a></li>
+            </ul>
+          </div>
+        </div>
+
+      <!-- Manzil va Ish vaqti -->
+        <div class="footer-box">
+          <div class="footer-section contact-info">
+              <div class="location">
+                <h3>Наш адрес</h3>
+                <p>Namangan viloyati, Namangan sh, Go'zal MFY</p>
+            </div>
+            <div class="working-hours">
+                <h3>Часы работы</h3>
+                <p>Понедельник - Пятница: 09:00 - 18:00</p>
+                <p>Суббота - Воскресенье: 10:00 - 16:00</p>
+            </div>          
+          </div>
+          <!-- Ijtimoiy tarmoq havolalari -->
+          <div class="footer-section">
+            <div class="social-icons-contacts-footer">
+              <div class="social-contacts-footer">
+                <a href="#"><svg class="mediaicon-contacts-footer telegram-contacts-footer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="telegram">
+                  <path d="M21 2H3a1 1 0 0 0-1 1v18a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1Zm-4.723 9.855c-.346 2.168-.722 4.538-.722 4.538s-.058.665-.549.78a2.369 2.369 0 0 1-1.445-.52c-.116-.087-2.168-1.387-2.919-2.023a.547.547 0 0 1 .029-.925 111.39 111.39 0 0 0 3.034-2.89c.347-.347.694-1.156-.751-.173-2.052 1.416-4.075 2.745-4.075 2.745a1.7 1.7 0 0 1-1.33.029c-.867-.26-1.878-.607-1.878-.607s-.694-.433.491-.9c0 0 5-2.052 6.734-2.774.665-.289 2.919-1.214 2.919-1.214s1.041-.405.954.578c-.029.409-.26 1.825-.492 3.356Z"></path>
+                </svg></a>
+                <a href="#"><svg class="mediaicon-contacts-footer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" id="instagram">
+                  <path d="M84 36H44a8 8 0 0 0-8 8v40a8 8 0 0 0 8 8h40a8 8 0 0 0 8-8V44a8 8 0 0 0-8-8ZM64 80a16 16 0 1 1 16-16 16 16 0 0 1-16 16Zm18-29a5 5 0 1 1 5-5 5 5 0 0 1-5 5Z"></path>
+                  <circle cx="64" cy="64" r="8"></circle>
+                  <path d="M104 0H24A24.07 24.07 0 0 0 0 24v80a24.07 24.07 0 0 0 24 24h80a24.07 24.07 0 0 0 24-24V24a24.07 24.07 0 0 0-24-24Zm-4 84a16 16 0 0 1-16 16H44a16 16 0 0 1-16-16V44a16 16 0 0 1 16-16h40a16 16 0 0 1 16 16Z"></path>
+                </svg></a>
+                <a href="#"><svg class="mediaicon-contacts-footer" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" id="youtube">
+                  <path d="M14 20l6-4-6-4zM26 0H6a6 6 0 0 0-6 6v20a6 6 0 0 0 6 6h20a6 6 0 0 0 6-6V6a6 6 0 0 0-6-6zm-.17 19.582c-.108 1.332-1.118 3.032-2.534 3.278-4.526.35-9.898.308-14.59 0-1.464-.184-2.426-1.948-2.534-3.278-.228-2.796-.228-4.388 0-7.184.108-1.33 1.094-3.084 2.534-3.244 4.638-.39 10.036-.306 14.59 0 1.632.06 2.426 1.738 2.534 3.07.226 2.796.226 4.562 0 7.358z"></path>
+                </svg></a>
+                <a href="#"><svg class="mediaicon-contacts-footer" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 16 16" id="facebook">
+                  <path d="M14 0H2C.897 0 0 .897 0 2v12c0 1.103.897 2 2 2h6v-5.5H6V8h2V6a3 3 0 0 1 3-3h2v2.5h-1c-.552 0-1-.052-1 .5v2h2.5l-1 2.5H11V16h3c1.103 0 2-.897 2-2V2c0-1.103-.897-2-2-2z"></path>
+                </svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+  </div>
+</footer>
+
+
+<!-- Footer bo'limini tugashi ################################################################################################## -->
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const title = document.querySelector(".news-title");
+    title.style.opacity = "1";
+    title.style.transform = "translateY(0)";
+
+    document.querySelector(".print-pdf").addEventListener("click", function () {
+        window.print();
+    });
+
+    document.querySelectorAll(".share").forEach(button => {
+        button.addEventListener("click", function () {
+            const platform = this.textContent.toLowerCase();
+            const url = encodeURIComponent(window.location.href);
+            let shareUrl = "";
+            
+            if (platform === "facebook") {
+                shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+            } else if (platform === "twitter") {
+                shareUrl = `https://twitter.com/intent/tweet?url=${url}`;
+            } else if (platform === "telegram") {
+                shareUrl = `https://t.me/share/url?url=${url}`;
+            }
+            
+            if (shareUrl) {
+                window.open(shareUrl, "_blank");
+            }
+        });
+    });
+});
+
+    </script>
+    <script src="{% static './script.js' %}"></script>
+</body>
+</html>

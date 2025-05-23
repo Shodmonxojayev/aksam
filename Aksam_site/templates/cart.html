@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+{% load static %}
+{% load humanize %}
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сават</title>
+    <link rel="stylesheet" href="{% static 'css/calculator.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        #orderForm {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 1.5rem;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            border-radius: 10px;
+            z-index: 1000;
+            width: 300px;
+        }
+        #overlay {
+            display: none;
+            position: fixed;
+            top:0; left:0; right:0; bottom:0;
+            background: rgba(0,0,0,0.5);
+            z-index: 900;
+        }
+        #orderForm input[type="text"] {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+        #orderForm button {
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            margin-right: 0.5rem;
+        }
+        .cart-back-btn{
+            text-decoration: none;
+            text-align: center;
+        }
+        .btn-send-order i{
+            padding: 5px;
+        }
+        .phone-number{
+            border: 2px solid black;
+            border-radius: 5px;
+        }
+        .btn-send-back{
+            border: 2px solid black;
+            border-radius: 3px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-shopping-cart"></i> Сизнинг саватингиз</h1>
+
+        {% if cart_items %}
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Маҳсулот номи</th>
+                        <th>Нархи</th>
+                        <th>Сони</th>
+                        <th>Жами</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in cart_items %}
+                    <tr>
+                        <td>{{ item.product.product_name }}</td>
+                        <td>{{ item.product.product_price|intcomma }} so'm</td>
+                        <td>{{ item.quantity }}</td>
+                        <td>{{ item.total_price|intcomma }} so'm</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <div class="total-price">
+                <strong>Жами сумма:</strong>
+                {{ cart_items.0.cart.total_price|intcomma }} so'm
+            </div>
+
+            <!-- Кнопки очистки и заказа -->
+            <form method="post" action="{% url 'clear_cart' %}" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger btn-send-order">
+                    <i class="fas fa-trash"></i> Ваша корзина
+                </button>
+            </form>
+
+            <button class="btn btn-success btn-send-order" onclick="showOrderForm()">
+                <i class="fas fa-paper-plane"></i> Отправить заказ
+            </button>
+
+        {% else %}
+            <p> Ваша корзина пуста.</p>
+        {% endif %}
+
+        <a href="{% url 'calculator_page' %}" class="btn btn-primary cart-back-btn" style="margin-top: 1rem; display: inline-block;">
+            <i class="fas fa-arrow-left"></i> Назад
+        </a>
+    </div>
+
+    <!-- Модальное окно формы -->
+    <div id="overlay" onclick="hideOrderForm()"></div>
+    <div id="orderForm">
+        <h3>Введите номер телефона: </h3>
+        <form method="post" action="{% url 'send_order' %}">
+            {% csrf_token %}
+            <input type="text" name="phone" class="phone-number" placeholder="+998 XX XXX XX XX" required pattern="\+998\s\d{2}\s\d{3}\s\d{2}\s\d{2}">
+            <input type="text" name="name" class="phone-number" placeholder="Ваша имя">
+            <button type="submit" class="btn-send-back">Отправить</button>
+            <button type="button" class="btn-send-back" onclick="hideOrderForm()">Отмена</button>
+        </form>
+    </div>
+
+    <script>
+        function showOrderForm() {
+            document.getElementById('orderForm').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+        function hideOrderForm() {
+            document.getElementById('orderForm').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
